@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Aggregator</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>News Aggregator - Home</title>
+  <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
-    <h1>Welcome to News Aggregator</h1>
-    <a href="sign-in.html">Sign In</a> | <a href="sign-up.html">Sign Up</a>
+  <div class="main-wrapper">
+    <header class="top-bar">
+      <h1>🗞️ News Aggregator</h1>
+      <p id="greeting-text">Welcome back!</p>
+
+    </header>
+
+    <section class="dashboard">
+      <div class="dashboard-card" onclick="location.href='search.html'">
+        <h2>🔍 Search News</h2>
+        <p>Find news by keywords and topics.</p>
+      </div>
+      <div class="dashboard-card" onclick="location.href='categories.html'">
+        <h2>📁 Browse Categories</h2>
+        <p>Select news by category like Tech, Sports, etc.</p>
+      </div>
+      <div class="dashboard-card" onclick="location.href='saved.html'">
+        <h2>💾 Saved Articles</h2>
+        <p>View your bookmarked articles.</p>
+      </div>
+      <div class="dashboard-card logout" onclick="location.href='sign-in.html'">
+        <h2>🔓 Logout</h2>
+        <p>Exit and return to sign in.</p>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
+<script>
+  const username = localStorage.getItem("username") || "Guest";
+  document.getElementById("greeting-text").textContent = `Welcome back, ${username}!`;
+</script>
+
